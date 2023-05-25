@@ -80,3 +80,41 @@ end
 # (in lib/recipes_repository.rb)
 class RecipesRepository
 end
+
+
+
+6. Write Test Examples
+
+Test for all method 
+# 1
+# Get all recipes
+
+repo = RecipeRepository.new
+recipes = repo.all
+
+recipes.length  => 2
+recipes.first.id =>   1
+recipes.first.name  => 'Katsu Curry'
+recipes.first.cooking_time =>  35
+
+
+Test for find method 
+# 2 
+# return a single recipe 
+
+repo = RecipeRepository.new
+recipes = repo.find(1)
+
+recipes.first.id =>   1
+recipes.first.name  => 'Katsu Curry'
+recipes.first.cooking_time =>  25
+
+recipes = repo.find(2)
+
+recipes.first.id =>   2
+recipes.first.name  => 'Mushroom Risotto'
+recipes.first.cooking_time =>  35
+
+
+INSERT INTO recipes (name, cooking_time, rating) VALUES ('Katsu Curry', '25', '5');
+INSERT INTO recipes (name, cooking_time, rating) VALUES ('Mushroom Risotto', '35', '5');
